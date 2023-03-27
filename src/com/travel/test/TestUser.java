@@ -24,6 +24,8 @@ public class TestUser {
 
         System.out.println("ssh-push");
 
+        System.out.println("hot-fix-ssh");
+
 //        BusinessDAOImpl iBusinessDAO = new BusinessDAOImpl();
 //        boolean b = iBusinessDAO.insertBusiness("asd", "asd", "asd");
 //        System.out.println(b);
