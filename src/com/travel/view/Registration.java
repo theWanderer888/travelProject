@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import com.travel.service.impl.UserServiceImpl;
+import com.travel.utils.CheckByPattern;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -108,17 +109,21 @@ public class Registration extends JFrame {
 				UserServiceImpl userService = new UserServiceImpl();
 				if (!(phonenum.equals("")&&name.equals("")&&pwd.equals("")&&city.equals(""))) {
 					try {
-						boolean b = userService.regUser(phonenum, name, pwd, city);
-						if (b) {
-							TestJFrame testJFrame = new TestJFrame();
-							testJFrame.setVisible(true);
-							dispose();
-						} else {
-							user_phonenum.setText("");
-							user_name.setText("");
-							user_pwd.setText("");
-							user_city.setText("");
-							JOptionPane.showMessageDialog(null, "注册失败，请输入新的注册信息");
+						if(CheckByPattern.checkPhoneNum(phonenum)){
+							boolean b = userService.regUser(phonenum, name, pwd, city);
+							if (b) {
+								TestJFrame testJFrame = new TestJFrame();
+								testJFrame.setVisible(true);
+								dispose();
+							} else {
+								user_phonenum.setText("");
+								user_name.setText("");
+								user_pwd.setText("");
+								user_city.setText("");
+								JOptionPane.showMessageDialog(null, "注册失败，请输入新的注册信息");
+							}
+						}else {
+							JOptionPane.showMessageDialog(null, "手机号格式错误！");
 						}
 					} catch (Exception ex) {
 						ex.printStackTrace();

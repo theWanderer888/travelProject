@@ -99,17 +99,20 @@ public class Register extends JFrame {
 				if (!(phonenum.equals("")&&name.equals("")&&pwd.equals(""))) {
 					try {
 						if(CheckByPattern.checkPhoneNum(phonenum)){
-						boolean b = iBusinessService.regBusiness(phonenum, name, pwd);
-						if (b) {
-							Login view = new Login();
-							view.setVisible(true);
-							dispose();
-						} else {
-							user_phonenum.setText("");
-							user_name.setText("");
-							user_pwd.setText("");
-							JOptionPane.showMessageDialog(null, "注册失败，请输入新的注册信息");
-						}}
+							boolean b = iBusinessService.regBusiness(phonenum, name, pwd);
+							if (b) {
+								Login view = new Login();
+								view.setVisible(true);
+								dispose();
+							} else {
+								user_phonenum.setText("");
+								user_name.setText("");
+								user_pwd.setText("");
+								JOptionPane.showMessageDialog(null, "注册失败，请输入新的注册信息");
+							}
+						}else {
+							JOptionPane.showMessageDialog(null, "手机号格式错误！");
+						}
 					} catch (Exception ex) {
 						ex.printStackTrace();
 					}
