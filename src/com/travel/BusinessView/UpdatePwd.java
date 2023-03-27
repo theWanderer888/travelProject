@@ -101,18 +101,15 @@ public class UpdatePwd extends JFrame {
 					if ((t=businessService.getPwd(oldPwd.getText()).equals(user.getBusiness_pwd())) && newPwd.getText().equals(reNewPwd.getText())){
 						boolean b = businessService.updateBusiness("business_pwd", Login.getBusiness().getBusiness_id(), newPwd.getText());
 						if (b){
-							System.out.println("修改密码成功");
 							user.setBusiness_pwd(newPwd.getText());
 							JOptionPane.showMessageDialog(null,"修改密码成功");
 							Login login = new Login();
 							login.setVisible(true);
 							dispose();
 						}else {
-							System.out.println("修改密码失败");
 							JOptionPane.showMessageDialog(null,"修改密码失败");
 						}
 					}else {
-						System.out.println("修改密码失败");
 						JOptionPane.showMessageDialog(null,t?"两次密码输入不一致":"旧密码错误！");
 					}
 				} catch (Exception e1) {
