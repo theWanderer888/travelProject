@@ -22,9 +22,9 @@ public class TestUser {
     private UserServiceImpl userService;
     public static void main(String[] args) throws Exception {
 
-        System.out.println("ssh-push");
+  //      System.out.println("ssh-push");
 
-        System.out.println("hot-fix-ssh");
+  //      System.out.println("hot-fix-ssh");
 
 //        BusinessDAOImpl iBusinessDAO = new BusinessDAOImpl();
 //        boolean b = iBusinessDAO.insertBusiness("asd", "asd", "asd");
