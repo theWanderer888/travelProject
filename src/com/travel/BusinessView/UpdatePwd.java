@@ -113,7 +113,6 @@ public class UpdatePwd extends JFrame {
 						JOptionPane.showMessageDialog(null,t?"两次密码输入不一致":"旧密码错误！");
 					}
 				} catch (Exception e1) {
-					// TODO 自动生成的 catch 块
 					e1.printStackTrace();
 				}
 			}
