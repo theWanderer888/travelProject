@@ -22,6 +22,8 @@ public class TestUser {
     private UserServiceImpl userService;
     public static void main(String[] args) throws Exception {
 
+        System.out.println("ssh-push");
+
 //        BusinessDAOImpl iBusinessDAO = new BusinessDAOImpl();
 //        boolean b = iBusinessDAO.insertBusiness("asd", "asd", "asd");
 //        System.out.println(b);
